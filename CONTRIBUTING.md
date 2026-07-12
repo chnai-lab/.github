@@ -1,0 +1,90 @@
+# Contributing at CHNAI LAB
+
+This guide applies to every CHNAI LAB repository. We are an AI-native team:
+everyone builds with AI agents (Claude Code, Copilot, etc.), so our workflow is
+designed to keep agent-speed development **traceable, reviewable, and safe**.
+
+## Principles
+
+1. **`main` is always deployable.** Nobody — human or agent — commits directly
+   to `main`. All work lands through pull requests.
+2. **Every change traces to an issue.** If it's worth doing, it's worth an
+   issue. PRs link their issue with `Closes #N`.
+3. **Small PRs win.** One PR = one concern. A reviewer (human or agent) should
+   understand it in under 10 minutes.
+4. **Agents are teammates, humans are owners.** An agent can write the code,
+   but a human opens the PR, verifies the result, and is accountable for it.
+
+## The loop
+
+```
+Issue → Branch → Build (with your agent) → PR → Review → Squash-merge → Delete branch
+```
+
+1. **Pick or open an issue** describing the problem/outcome (not the code).
+2. **Branch from fresh `main`:**
+   ```bash
+   git checkout main && git pull --rebase origin main
+   git checkout -b feat/42-lesson-progress
+   ```
+3. **Build.** Point your agent at the issue. Keep commits small and coherent.
+4. **Open a PR early** (draft is fine). Fill in the template — especially
+   *How it was verified* and *AI involvement*.
+5. **Review.** At least one other human approves product-repo PRs. Review the
+   *behavior and risk*, not just the diff — agents produce plausible-looking
+   code; verify it actually runs.
+6. **Squash-merge**, then delete the branch. The issue closes automatically.
+
+## Branches & commits
+
+- Branch names: `feat/<issue>-slug`, `fix/<issue>-slug`, `chore/…`, `docs/…`
+  — e.g. `fix/17-pos-change-due`.
+- Commits follow [Conventional Commits](https://www.conventionalcommits.org):
+  `feat: …`, `fix: …`, `chore: …`, `docs: …`, `refactor: …`, `test: …`.
+- When an AI agent authored the code, keep its co-author trailer in the commit
+  (e.g. `Co-Authored-By: Claude <noreply@anthropic.com>`). This is how we keep
+  agent work honest and searchable later.
+
+## Working with AI agents
+
+- **Agents work on branches, never on `main`.** Configure your agent's working
+  directory on a feature branch before it starts editing.
+- **Give agents context, not secrets.** Each repo keeps a `CLAUDE.md` /
+  `AGENTS.md` with project context, commands, and conventions so any
+  teammate's agent onboards instantly. Never paste tokens, customer data, or
+  credentials into prompts, commits, or agent context files.
+- **Verify before you push.** "The agent said it works" is not verification.
+  Run the app / tests yourself and record what you did in the PR's
+  *How it was verified* section.
+- **One agent session ≈ one branch.** If your agent pivots to a different
+  concern, open a new issue and branch instead of growing the PR.
+
+## Push / pull hygiene
+
+- Sync before you push: `git pull --rebase origin main` (rebase, don't merge,
+  so history stays linear).
+- Never `git push --force` a shared branch. On your own PR branch,
+  `--force-with-lease` only.
+- Push at least daily on active branches — unpushed work is invisible to the
+  team and to reviewers.
+- Delete branches after merge (GitHub offers the button; take it).
+- Dependabot PRs: whoever owns the repo that week reviews/merges them; don't
+  let them pile up.
+
+## Roles & access
+
+- **Org owners** (founders) administer repos, settings, and merges to `main`.
+- **Members** get `write` on the repos they build; they work through PRs like
+  everyone else.
+- New teammates join the **chnai-lab org** (not personal-repo invites), so
+  access is managed in one place.
+
+## Traceability checklist
+
+Before you merge, your PR should answer — from the PR page alone, without
+asking you:
+
+- [ ] What issue does this close?
+- [ ] What changed, in one paragraph?
+- [ ] How was it verified (commands run, screenshots, test output)?
+- [ ] What did the AI agent do vs. what did the human check?

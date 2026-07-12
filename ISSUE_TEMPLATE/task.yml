@@ -1,0 +1,15 @@
+name: Task / chore
+description: Ops, refactoring, docs, dependencies, or anything that isn't a bug or feature
+title: "chore: "
+labels: ["task"]
+body:
+  - type: textarea
+    id: task
+    attributes:
+      label: What needs doing
+    validations:
+      required: true
+  - type: textarea
+    id: done
+    attributes:
+      label: Definition of done
