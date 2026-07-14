@@ -20,6 +20,7 @@ Closes #
 - Agent/tool used:
 - Human verification performed:
 - Sensitive context shared with tools: none / describe
+- Org/repo guide files read by the agent:
 
 ## Risk & rollback
 
@@ -29,3 +30,6 @@ Closes #
 
 <!-- For public repos or screenshots/docs: confirm this does not expose secrets,
      user data, unreleased strategy, or unsupported traction claims. -->
+
+- [ ] No secrets, credentials, private user data, or private strategy exposed
+- [ ] No unsupported traction, revenue, safety, compliance, or certification claims

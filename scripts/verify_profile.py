@@ -7,6 +7,8 @@ REQUIRED_FILES = [
     "PULL_REQUEST_TEMPLATE.md",
     "AGENTS.md",
     "SECURITY.md",
+    "docs/AI_AGENT_WORKFLOW.md",
+    "docs/MEMBER_ONBOARDING.md",
     "ISSUE_TEMPLATE/bug-report.yml",
     "ISSUE_TEMPLATE/feature.yml",
     "ISSUE_TEMPLATE/task.yml",
@@ -30,6 +32,15 @@ REQUIRED_AGENT_TERMS = [
     "verification",
     "pull request",
     "main",
+    "Standard Agent Prompt",
+]
+
+REQUIRED_WORKFLOW_TERMS = [
+    "Session Start Protocol",
+    "Pull Request Protocol",
+    "Review Protocol",
+    "Handoff Template",
+    "Security Rules",
 ]
 
 PLACEHOLDER_MARKERS = [
@@ -72,6 +83,7 @@ def main() -> None:
         read(path)
     ensure_terms("profile/README.md", REQUIRED_PROFILE_TERMS)
     ensure_terms("AGENTS.md", REQUIRED_AGENT_TERMS)
+    ensure_terms("docs/AI_AGENT_WORKFLOW.md", REQUIRED_WORKFLOW_TERMS)
     ensure_no_placeholders()
 
 

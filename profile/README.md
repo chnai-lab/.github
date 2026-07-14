@@ -46,6 +46,17 @@ data, source code, credentials, or strategy.
 - Agents receive context, never secrets.
 - Security-sensitive work stays private and follows the org security policy.
 
+## Start Here
+
+- [`AGENTS.md`](https://github.com/chnai-lab/.github/blob/main/AGENTS.md) —
+  default rules for AI agents in CHNAI LAB repos.
+- [`docs/AI_AGENT_WORKFLOW.md`](https://github.com/chnai-lab/.github/blob/main/docs/AI_AGENT_WORKFLOW.md)
+  — team workflow for humans and agents working together.
+- [`CONTRIBUTING.md`](https://github.com/chnai-lab/.github/blob/main/CONTRIBUTING.md)
+  — branch, PR, review, and access rules.
+- [`SECURITY.md`](https://github.com/chnai-lab/.github/blob/main/SECURITY.md)
+  — public/private reporting boundary.
+
 ## Team
 
 CHNAI LAB currently has seven members across cybersecurity, infrastructure,

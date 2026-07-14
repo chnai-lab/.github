@@ -4,8 +4,9 @@ This guide applies to every CHNAI LAB repository. We are an AI-native team:
 everyone builds with AI agents (Claude Code, Copilot, etc.), so our workflow is
 designed to keep agent-speed development **traceable, reviewable, and safe**.
 
-For agent-specific rules, also read [`AGENTS.md`](AGENTS.md). For sensitive
-work, read [`SECURITY.md`](SECURITY.md) before you share context with any tool.
+For agent-specific rules, also read [`AGENTS.md`](AGENTS.md) and
+[`docs/AI_AGENT_WORKFLOW.md`](docs/AI_AGENT_WORKFLOW.md). For sensitive work,
+read [`SECURITY.md`](SECURITY.md) before you share context with any tool.
 
 ## Principles
 
@@ -37,6 +38,24 @@ Issue → Branch → Build (with your agent) → PR → Review → Squash-merge 
    *behavior and risk*, not just the diff — agents produce plausible-looking
    code; verify it actually runs.
 6. **Squash-merge**, then delete the branch. The issue closes automatically.
+
+## New Member Start
+
+1. Accept the CHNAI LAB org invite.
+2. Turn on GitHub two-factor authentication.
+3. Confirm which product repos you can access.
+4. Clone only the repo assigned to your task.
+5. Ask your AI agent to read the org guide and the repo guide before editing.
+6. Open a small first PR: docs, test, bug fix, or one isolated feature slice.
+
+Use this first prompt for any agent:
+
+```text
+Read AGENTS.md, CONTRIBUTING.md, SECURITY.md, README.md, and CLAUDE.md if it
+exists. Summarize the repo rules, product boundary, checks, and risk before
+editing. Do not use secrets. Work on a branch. Keep the change small and prepare
+a PR summary with verification.
+```
 
 ## Branches & commits
 
@@ -83,6 +102,19 @@ Issue → Branch → Build (with your agent) → PR → Review → Squash-merge 
   everyone else.
 - New teammates join the **chnai-lab org** (not personal-repo invites), so
   access is managed in one place.
+- Outside collaborators are temporary. If someone is joining the team, invite
+  them to the org and assign repo access through org membership.
+
+## Review Standard
+
+Reviewers check:
+
+- The issue and PR match.
+- The agent followed the repo guide.
+- The change is small enough to review.
+- The verification is real.
+- Public/private boundaries are respected.
+- Claims are supported and conservative.
 
 ## Traceability checklist
 
