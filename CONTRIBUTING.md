@@ -98,12 +98,12 @@ a PR summary with verification.
 ## Roles & access
 
 - **Org owners** (founders) administer repos, settings, and merges to `main`.
-- **Members** get `write` on the repos they build; they work through PRs like
-  everyone else.
+- **Members** get `write` through product teams on the repos they build; they
+  work through PRs like everyone else.
 - New teammates join the **chnai-lab org** (not personal-repo invites), so
   access is managed in one place.
 - Outside collaborators are temporary. If someone is joining the team, invite
-  them to the org and assign repo access through org membership.
+  them to the org and assign repo access through a product team.
 
 ## Review Standard
 

@@ -22,8 +22,19 @@ the team.
 Recommended default:
 
 - Org owner: administers org, repo settings, secrets, billing, and production.
-- Member: receives write access only to assigned repos.
+- Member: receives write access through assigned product teams only.
 - Outside collaborator: short-term access for one repo only.
+
+Current product teams:
+
+- `@chnai-lab/chomkar-builders`
+- `@chnai-lab/sat-digital-builders`
+- `@chnai-lab/phsaros-builders`
+- `@chnai-lab/svaeng-yul-builders`
+
+Each team has push access to one product repo and is named in that repo's
+`CODEOWNERS`. New product access should use a team rather than a direct
+collaborator grant.
 
 ## Session Start Protocol
 
