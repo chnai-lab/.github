@@ -4,6 +4,9 @@ This guide applies to every CHNAI LAB repository. We are an AI-native team:
 everyone builds with AI agents (Claude Code, Copilot, etc.), so our workflow is
 designed to keep agent-speed development **traceable, reviewable, and safe**.
 
+For agent-specific rules, also read [`AGENTS.md`](AGENTS.md). For sensitive
+work, read [`SECURITY.md`](SECURITY.md) before you share context with any tool.
+
 ## Principles
 
 1. **`main` is always deployable.** Nobody — human or agent — commits directly
@@ -58,6 +61,8 @@ Issue → Branch → Build (with your agent) → PR → Review → Squash-merge 
   *How it was verified* section.
 - **One agent session ≈ one branch.** If your agent pivots to a different
   concern, open a new issue and branch instead of growing the PR.
+- **Record AI involvement in the PR.** Say which agent helped, what it changed,
+  what a human reviewed, and what commands or screens proved the result.
 
 ## Push / pull hygiene
 
@@ -88,3 +93,5 @@ asking you:
 - [ ] What changed, in one paragraph?
 - [ ] How was it verified (commands run, screenshots, test output)?
 - [ ] What did the AI agent do vs. what did the human check?
+- [ ] Did the change avoid secrets, private user data, and overbroad public
+      claims?

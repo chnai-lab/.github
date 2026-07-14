@@ -17,6 +17,15 @@ Closes #
 <!-- e.g. "Claude Code wrote the initial implementation from issue #42;
      I reviewed the diff, fixed the date handling, and tested checkout flow." -->
 
+- Agent/tool used:
+- Human verification performed:
+- Sensitive context shared with tools: none / describe
+
 ## Risk & rollback
 
 <!-- What could break? How do we undo this if it does? "Low risk — additive UI change" is fine. -->
+
+## Public/private boundary
+
+<!-- For public repos or screenshots/docs: confirm this does not expose secrets,
+     user data, unreleased strategy, or unsupported traction claims. -->
