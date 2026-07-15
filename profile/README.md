@@ -57,6 +57,14 @@ data, source code, credentials, or strategy.
 - [`SECURITY.md`](https://github.com/chnai-lab/.github/blob/main/SECURITY.md)
   — public/private reporting boundary.
 
+## Reusable AI-Native Team Starter
+
+Teams outside CHNAI LAB can adopt the product-neutral
+[`ai-native-team-starter`](https://github.com/kavatana/ai-native-team-starter).
+It packages the workflow as a GitHub template with vendor-neutral agent rules,
+issue and pull request forms, onboarding checklists, security boundaries, and a
+zero-dependency readiness check. It contains no private startup code or strategy.
+
 ## Team
 
 CHNAI LAB currently has seven members across cybersecurity, infrastructure,

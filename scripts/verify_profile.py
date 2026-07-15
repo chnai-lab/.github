@@ -25,6 +25,7 @@ REQUIRED_PROFILE_TERMS = [
     "Vantrex",
     "PHSAROS",
     "private",
+    "AI-Native Team Starter",
 ]
 
 REQUIRED_AGENT_TERMS = [

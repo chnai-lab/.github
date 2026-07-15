@@ -63,9 +63,10 @@ a PR summary with verification.
   — e.g. `fix/17-pos-change-due`.
 - Commits follow [Conventional Commits](https://www.conventionalcommits.org):
   `feat: …`, `fix: …`, `chore: …`, `docs: …`, `refactor: …`, `test: …`.
-- When an AI agent authored the code, keep its co-author trailer in the commit
-  (e.g. `Co-Authored-By: Claude <noreply@anthropic.com>`). This is how we keep
-  agent work honest and searchable later.
+- Use `Co-authored-by` only for a human who materially contributed to the final
+  change and approved the credit. Record AI assistance in the pull request's
+  **AI involvement** section instead of using authorship metadata to simulate
+  human collaboration or GitHub achievement activity.
 
 ## Working with AI agents
 
@@ -82,6 +83,8 @@ a PR summary with verification.
   concern, open a new issue and branch instead of growing the PR.
 - **Record AI involvement in the PR.** Say which agent helped, what it changed,
   what a human reviewed, and what commands or screens proved the result.
+- **Keep contribution activity authentic.** Do not stage co-authors, reviews,
+  issues, discussions, or merges for profile metrics or achievements.
 
 ## Push / pull hygiene
 
