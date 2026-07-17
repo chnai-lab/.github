@@ -1,129 +1,191 @@
-# Contributing at CHNAI LAB
+# Contributing At CHNAI LAB
 
-This guide applies to every CHNAI LAB repository. We are an AI-native team:
-everyone builds with AI agents (Claude Code, Copilot, etc.), so our workflow is
-designed to keep agent-speed development **traceable, reviewable, and safe**.
+CHNAI LAB is an AI-native product studio. We use agents to move faster while
+keeping every meaningful change owned by a person, linked to a real outcome,
+verified with evidence, and reviewed before it reaches `main`.
 
-For agent-specific rules, also read [`AGENTS.md`](AGENTS.md) and
-[`docs/AI_AGENT_WORKFLOW.md`](docs/AI_AGENT_WORKFLOW.md). For sensitive work,
-read [`SECURITY.md`](SECURITY.md) before you share context with any tool.
+Read these before contributing:
 
-## Principles
+- [`AGENTS.md`](AGENTS.md) - vendor-neutral agent contract.
+- [`docs/AI_AGENT_WORKFLOW.md`](docs/AI_AGENT_WORKFLOW.md) - complete delivery loop.
+- [`docs/REPOSITORY_STANDARD.md`](docs/REPOSITORY_STANDARD.md) - repository adoption contract.
+- [`GOVERNANCE.md`](GOVERNANCE.md) - roles, access, and decision rights.
+- [`SECURITY.md`](SECURITY.md) - reporting and sensitive-data boundary.
 
-1. **`main` is always deployable.** Nobody — human or agent — commits directly
-   to `main`. All work lands through pull requests.
-2. **Every change traces to an issue.** If it's worth doing, it's worth an
-   issue. PRs link their issue with `Closes #N`.
-3. **Small PRs win.** One PR = one concern. A reviewer (human or agent) should
-   understand it in under 10 minutes.
-4. **Agents are teammates, humans are owners.** An agent can write the code,
-   but a human opens the PR, verifies the result, and is accountable for it.
+## The Working Agreement
 
-## The loop
+1. Every change starts from an issue with an accountable human.
+2. One issue maps to one branch and one focused pull request.
+3. The issue states risk, evidence, scope, non-goals, verification, and done.
+4. The agent reads the issue and repository contract before editing.
+5. AI work and human judgment are disclosed separately.
+6. A human personally verifies the behavior they claim to have checked.
+7. `main` is kept reviewable and deployable through pull requests.
 
-```
-Issue → Branch → Build (with your agent) → PR → Review → Squash-merge → Delete branch
-```
-
-1. **Pick or open an issue** describing the problem/outcome (not the code).
-2. **Branch from fresh `main`:**
-   ```bash
-   git checkout main && git pull --rebase origin main
-   git checkout -b feat/42-lesson-progress
-   ```
-3. **Build.** Point your agent at the issue. Keep commits small and coherent.
-4. **Open a PR early** (draft is fine). Fill in the template — especially
-   *How it was verified* and *AI involvement*.
-5. **Review.** At least one other human approves product-repo PRs. Review the
-   *behavior and risk*, not just the diff — agents produce plausible-looking
-   code; verify it actually runs.
-6. **Squash-merge**, then delete the branch. The issue closes automatically.
-
-## New Member Start
-
-1. Accept the CHNAI LAB org invite.
-2. Turn on GitHub two-factor authentication.
-3. Confirm which product repos you can access.
-4. Clone only the repo assigned to your task.
-5. Ask your AI agent to read the org guide and the repo guide before editing.
-6. Open a small first PR: docs, test, bug fix, or one isolated feature slice.
-
-Use this first prompt for any agent:
+## Exact Path
 
 ```text
-Read AGENTS.md, CONTRIBUTING.md, SECURITY.md, README.md, and CLAUDE.md if it
-exists. Summarize the repo rules, product boundary, checks, and risk before
-editing. Do not use secrets. Work on a branch. Keep the change small and prepare
-a PR summary with verification.
+Choose product -> join product team -> ready issue -> issue branch -> agent
+preflight -> focused implementation -> checks -> draft PR -> agent handoff ->
+human verification -> CODEOWNER/domain review -> merge -> delete branch ->
+follow-up issue
 ```
 
-## Branches & commits
+The default work-in-progress limit is one active implementation issue per
+builder per product. If work is blocked, record the blocker before starting a
+second item.
 
-- Branch names: `feat/<issue>-slug`, `fix/<issue>-slug`, `chore/…`, `docs/…`
-  — e.g. `fix/17-pos-change-due`.
-- Commits follow [Conventional Commits](https://www.conventionalcommits.org):
-  `feat: …`, `fix: …`, `chore: …`, `docs: …`, `refactor: …`, `test: …`.
-- When an AI agent authored the code, keep its co-author trailer in the commit
-  (e.g. `Co-Authored-By: Claude <noreply@anthropic.com>`). This is how we keep
-  agent work honest and searchable later.
+## 1. Choose Or Open A Ready Issue
 
-## Working with AI agents
+Use the inherited feature, bug, task, or decision form. A ready issue contains:
 
-- **Agents work on branches, never on `main`.** Configure your agent's working
-  directory on a feature branch before it starts editing.
-- **Give agents context, not secrets.** Each repo keeps a `CLAUDE.md` /
-  `AGENTS.md` with project context, commands, and conventions so any
-  teammate's agent onboards instantly. Never paste tokens, customer data, or
-  credentials into prompts, commits, or agent context files.
-- **Verify before you push.** "The agent said it works" is not verification.
-  Run the app / tests yourself and record what you did in the PR's
-  *How it was verified* section.
-- **One agent session ≈ one branch.** If your agent pivots to a different
-  concern, open a new issue and branch instead of growing the PR.
-- **Record AI involvement in the PR.** Say which agent helped, what it changed,
-  what a human reviewed, and what commands or screens proved the result.
+- Accountable human.
+- Problem or outcome.
+- Evidence or clearly labeled assumption.
+- Scope and non-goals.
+- Definition of done.
+- Verification plan.
+- Risk tier R0, R1, R2, or R3.
+- Safe public/private boundary.
 
-## Push / pull hygiene
+Do not place private member information or startup-sensitive context in this
+public `.github` repository. Open the issue in the affected private product
+repository.
 
-- Sync before you push: `git pull --rebase origin main` (rebase, don't merge,
-  so history stays linear).
-- Never `git push --force` a shared branch. On your own PR branch,
-  `--force-with-lease` only.
-- Push at least daily on active branches — unpushed work is invisible to the
-  team and to reviewers.
-- Delete branches after merge (GitHub offers the button; take it).
-- Dependabot PRs: whoever owns the repo that week reviews/merges them; don't
-  let them pile up.
+## 2. Create The Issue Branch
 
-## Roles & access
+```bash
+git switch main
+git pull --rebase origin main
+git switch -c feat/42-short-name
+```
 
-- **Org owners** (founders) administer repos, settings, and merges to `main`.
-- **Members** get `write` through product teams on the repos they build; they
-  work through PRs like everyone else.
-- New teammates join the **chnai-lab org** (not personal-repo invites), so
-  access is managed in one place.
-- Outside collaborators are temporary. If someone is joining the team, invite
-  them to the org and assign repo access through a product team.
+Use `fix/`, `docs/`, or `chore/` when appropriate. Do not push directly to
+`main`. Never force-push a shared branch. On your own unreviewed PR branch, use
+`--force-with-lease` only when necessary.
 
-## Review Standard
+## 3. Start The Agent With Context
 
-Reviewers check:
+Give the agent the issue and ask it to read the local repository files in
+`AGENTS.md`. Before editing, the agent must return:
 
-- The issue and PR match.
-- The agent followed the repo guide.
-- The change is small enough to review.
-- The verification is real.
-- Public/private boundaries are respected.
-- Claims are supported and conservative.
+- Outcome and product boundary.
+- Risk tier.
+- Files likely to change.
+- Checks it will run.
+- Assumptions and unknowns.
+- Stop conditions.
 
-## Traceability checklist
+Correct wrong assumptions before the agent produces a large diff. Do not paste
+secrets, private chats, personal data, production credentials, or an unbounded
+private knowledge dump into the prompt.
 
-Before you merge, your PR should answer — from the PR page alone, without
-asking you:
+## 4. Build One Outcome
 
-- [ ] What issue does this close?
-- [ ] What changed, in one paragraph?
-- [ ] How was it verified (commands run, screenshots, test output)?
-- [ ] What did the AI agent do vs. what did the human check?
-- [ ] Did the change avoid secrets, private user data, and overbroad public
-      claims?
+- Follow existing architecture and repository conventions.
+- Keep unrelated cleanup out of the branch.
+- Preserve human changes already in the worktree.
+- Add tests proportional to behavior and risk.
+- Push early when work will continue.
+- Open a draft PR before the work becomes difficult to review.
+
+An agent can implement and explain. The builder remains responsible for
+understanding the change well enough to maintain and defend it.
+
+## 5. Prove The Change
+
+Run the repository's documented verification command plus relevant tests,
+lint, type checks, build, security checks, and manual flows. Record exact
+commands and results in the PR.
+
+For visible UI changes, test the affected mobile and desktop flow and attach
+evidence when useful. For backend, data, auth, security, payment, or trading
+work, test failure paths and name the affected route, function, migration, or
+boundary.
+
+"The agent said it works" is not verification.
+
+## 6. Complete The Pull Request
+
+The PR template requires:
+
+- `Closes #<issue>`.
+- Accountable human and risk tier.
+- Outcome, scope, and non-goals.
+- Automated evidence and human manual verification.
+- AI involvement and human decisions.
+- Risks, rollback, and remaining uncertainty.
+- Public/private and claim-safety confirmation.
+
+Keep the PR in draft while required evidence is missing. Mark it ready only
+when the builder has inspected the final diff and completed their human checks.
+
+## 7. Review Behavior And Risk
+
+Reviewers check the issue outcome, not only whether the diff looks plausible.
+They verify scope, architecture, evidence, failure paths, security, data
+boundaries, public claims, and maintainability.
+
+R2 changes require the relevant domain reviewer. R3 actions stop before the
+privileged or irreversible action until the organization owner explicitly
+authorizes it.
+
+Resolve conversations with code, evidence, or a clear scope decision. Silence
+is not approval.
+
+## 8. Merge And Learn
+
+Use squash merge unless the repository documents another method. Delete the
+branch after merge. Create a new issue for follow-up work instead of hiding it
+inside the merged PR.
+
+## Commits And Attribution
+
+- Use Conventional Commit subjects: `feat:`, `fix:`, `docs:`, `chore:`,
+  `refactor:`, `test:`, or `ci:`.
+- Keep commits coherent and free of generated noise.
+- Use `Co-authored-by` only for a human who materially contributed to the final
+  change and approved the credit.
+- Record AI assistance in the PR's **AI involvement** section. Do not use
+  authorship metadata to simulate human collaboration or GitHub achievements.
+- Never stage issues, reviews, reactions, merges, or co-authors for profile
+  metrics.
+
+## Access And Accounts
+
+- Members receive product access through GitHub teams.
+- Organization base repository access remains `none`.
+- Two-factor authentication is required before product access.
+- Each person uses their own account and credentials.
+- Commit identity must be deliberate: use GitHub's account-provided no-reply
+  address or an intentionally public professional address, never expose a
+  personal mailbox by accident.
+- Enable GitHub's **Keep my email addresses private** and **Block command line
+  pushes that expose my email** settings before the first contribution.
+- Shared passwords are prohibited for GitHub, email, internal systems, and
+  production.
+- Outside collaborators are temporary and limited to one repository.
+
+CHNAI LAB currently uses GitHub Free. Private-repository branch protection is
+therefore a policy rather than an enforced control. The organization will not
+claim required approvals or checks are technically enforced until a GitHub Team
+upgrade and live settings prove it.
+
+## Reusable AI-Native Team Starter
+
+The public
+[`ai-native-team-starter`](https://github.com/kavatana/ai-native-team-starter)
+packages a product-neutral version of this workflow. It contains no private
+startup source, data, or strategy.
+
+## Final Traceability Check
+
+Before merge, a teammate should answer from the PR alone:
+
+- What issue and human owner does this trace to?
+- What changed and what stayed out of scope?
+- What did the AI agent contribute?
+- What did a human personally verify?
+- Which checks passed?
+- What could fail and how is it rolled back?
+- Did the change preserve secrets, private data, strategy, and claim boundaries?

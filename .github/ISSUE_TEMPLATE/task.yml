@@ -1,0 +1,72 @@
+name: Task or maintenance
+description: Documentation, refactoring, dependency, operations, or repository work
+title: "chore: "
+body:
+  - type: input
+    id: human_owner
+    attributes:
+      label: Accountable human
+      description: GitHub handle of the person who will verify completion.
+      placeholder: "@username"
+    validations:
+      required: true
+
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Outcome
+      description: What should be true when this task is complete?
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Why is this needed now? Link related issues, decisions, or evidence.
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope and non-goals
+      description: State what is included and what must remain unchanged.
+    validations:
+      required: true
+
+  - type: textarea
+    id: done
+    attributes:
+      label: Definition of done
+      description: List observable, testable completion conditions.
+    validations:
+      required: true
+
+  - type: textarea
+    id: verification
+    attributes:
+      label: Verification plan
+      description: Commands and human checks that will prove the outcome.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: risk
+    attributes:
+      label: Risk tier
+      options:
+        - R0 - Documentation or non-runtime change
+        - R1 - Normal product behavior
+        - R2 - Auth, data, security, payments, trading, migrations, or public claims
+        - R3 - Production access, secrets, visibility, legal commitments, or irreversible action
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: boundary
+    attributes:
+      label: Safety boundary
+      options:
+        - label: This task contains no secrets, credentials, private user data, or private strategy.
+          required: true

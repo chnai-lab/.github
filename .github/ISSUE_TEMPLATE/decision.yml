@@ -1,0 +1,70 @@
+name: Decision record
+description: Record a product, architecture, security, or operating decision before implementation
+title: "decision: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this in the affected private product repository when the context is not safe for public discussion.
+
+  - type: input
+    id: owner
+    attributes:
+      label: Decision owner
+      description: GitHub handle of the human accountable for this decision.
+      placeholder: "@username"
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context and constraint
+      description: What changed, what is uncertain, and why a decision is needed now?
+    validations:
+      required: true
+
+  - type: textarea
+    id: options
+    attributes:
+      label: Options considered
+      description: Include meaningful alternatives and the tradeoff of each.
+    validations:
+      required: true
+
+  - type: textarea
+    id: decision
+    attributes:
+      label: Proposed decision
+      description: State the choice narrowly enough that a reviewer can agree or disagree.
+    validations:
+      required: true
+
+  - type: textarea
+    id: consequences
+    attributes:
+      label: Consequences and rollback
+      description: Benefits, costs, new risks, and how the decision can be reversed.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: risk
+    attributes:
+      label: Risk tier
+      options:
+        - R0 - Documentation or non-runtime change
+        - R1 - Normal product behavior
+        - R2 - Auth, data, security, payments, trading, migrations, or public claims
+        - R3 - Production access, secrets, visibility, legal commitments, or irreversible action
+    validations:
+      required: true
+
+  - type: input
+    id: review_date
+    attributes:
+      label: Review trigger or date
+      description: When should the team revisit this decision?
+      placeholder: "After the pilot, after 30 days, or YYYY-MM-DD"
+    validations:
+      required: true

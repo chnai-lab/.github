@@ -10,13 +10,32 @@ concurrency:
   group: profile-checks-${{ github.ref }}
   cancel-in-progress: true
 
+permissions:
+  contents: read
+
 jobs:
   verify:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v7
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          fetch-depth: 0
+
+      - name: Use Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
+        with:
+          python-version: "3.13"
 
       - name: Verify public profile files
         run: python3 scripts/verify_profile.py
+        env:
+          CHNAI_COMMIT_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+
+      - name: Compile verifier
+        run: python3 -m py_compile scripts/verify_profile.py
+
+      - name: Check whitespace
+        run: git diff --check "$(git merge-base origin/main HEAD)" HEAD
