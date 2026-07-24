@@ -14,7 +14,9 @@ Follow instructions in this order:
 4. Local tool guidance such as `CLAUDE.md` or Copilot instructions.
 5. [`docs/AI_AGENT_WORKFLOW.md`](docs/AI_AGENT_WORKFLOW.md).
 6. [`docs/REPOSITORY_STANDARD.md`](docs/REPOSITORY_STANDARD.md).
-7. Relevant source, tests, CI, package scripts, and Git history.
+7. [`docs/AI_CONCIERGE_STANDARD.md`](docs/AI_CONCIERGE_STANDARD.md) when a
+   visitor, user, member, tool, or agent will interact with an AI surface.
+8. Relevant source, tests, CI, package scripts, and Git history.
 
 When rules conflict, follow the safer or more product-specific rule and report
 the conflict. Never invent missing product context.
@@ -91,6 +93,10 @@ Agents do not push directly to `main` and do not merge their own work.
   settings, or production state without an explicit R3 owner decision.
 - Never perform destructive or irreversible data operations for convenience.
 - Never create fake co-authors, reviews, issues, merges, or achievement activity.
+- Never connect a public assistant to private tools, member data, product data,
+  production, payments, or trading systems.
+- Never publish an agent endpoint, capability, release level, or protocol claim
+  before the deployed behavior and verification prove it.
 
 ## Risk Stop Gate
 

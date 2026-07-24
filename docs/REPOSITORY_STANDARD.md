@@ -49,6 +49,7 @@ the product-specific boundary.
 | `.github/dependabot.yml` | GitHub Actions plus relevant package ecosystems |
 | `.env.example` or equivalent | Placeholder-only configuration contract when environment values exist |
 | Repo verifier or documented `verify` command | One command that checks the repository's required policy and engineering gates |
+| Versioned assistant manifest and evaluation contract | Required when the product exposes a concierge, model-backed assistant, or action-capable agent |
 
 `CLAUDE.md`, Copilot instructions, or tool-specific files may extend
 `AGENTS.md`; they do not replace the vendor-neutral entrypoint.
@@ -93,6 +94,11 @@ Repositories add stricter controls when they touch:
 
 The local `AGENTS.md` states the specific forbidden actions, required reviewer,
 test command, manual evidence, and rollback expectation.
+
+Any visitor-facing, user-facing, or internal AI surface also follows
+[`AI_CONCIERGE_STANDARD.md`](AI_CONCIERGE_STANDARD.md). Start with a
+deterministic, read-only assistant. Model-backed answers, private retrieval, and
+actions require separate risk review and evidence.
 
 ## Adoption Procedure
 

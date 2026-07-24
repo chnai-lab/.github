@@ -112,8 +112,10 @@ Before editing, every agent reads in this order:
 3. The local `README.md`, `CONTRIBUTING.md`, and `SECURITY.md`.
 4. Local tool-specific guidance such as `CLAUDE.md` or Copilot instructions.
 5. This organization workflow and `docs/REPOSITORY_STANDARD.md`.
-6. Package scripts, CI, and the documented verification command.
-7. Git status, current branch, recent history, and relevant source files.
+6. `docs/AI_CONCIERGE_STANDARD.md` when the change touches an AI surface used by
+   a visitor, user, member, tool, or another agent.
+7. Package scripts, CI, and the documented verification command.
+8. Git status, current branch, recent history, and relevant source files.
 
 The agent then posts a preflight before changing files:
 
@@ -266,6 +268,13 @@ Evidence is matched to the change:
 | Security or auth | Threat boundary, negative tests, domain review, redacted evidence |
 | Dependency update | Clean install, audit, tests, build, and lockfile review |
 | Public claim | Source or owner approval, exact limitation, and no unsupported implication |
+| Public or product assistant | Approved source boundary, routing and fallback tests, accessibility, claim review, network inspection, and human handoff |
+| Model-backed assistant | Retrieval evaluation, prompt-injection tests, citation validation, data-class separation, rate and cost limits, and domain review |
+| Action-capable agent | Auth, least privilege, preview, confirmation, audit trace, idempotency, failure path, and rollback |
+
+AI output shown to users is R2. An action that changes production, access,
+payments, trading, legal state, or irreversible data remains R3 even when an
+agent only provides the interface.
 
 The PR records who performed manual verification. An agent may guide the check;
 it may not claim the human observed something they did not observe.

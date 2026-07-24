@@ -14,6 +14,7 @@ REQUIRED_FILES = [
     "PULL_REQUEST_TEMPLATE.md",
     "SECURITY.md",
     "docs/AI_AGENT_WORKFLOW.md",
+    "docs/AI_CONCIERGE_STANDARD.md",
     "docs/MEMBER_ONBOARDING.md",
     "docs/REPOSITORY_STANDARD.md",
     ".github/CODEOWNERS",
@@ -92,6 +93,27 @@ REQUIRED_REPO_STANDARD_TERMS = [
     "Context-ready",
     "Review-ready",
     "Enforced",
+]
+
+REQUIRED_CONCIERGE_TERMS = [
+    "AI Concierge And Agent-City Standard",
+    "Digital City Map",
+    "Authority Matrix",
+    "Release Levels",
+    "Required Public Answer Contract",
+    "Knowledge Classes",
+    "Request Lifecycle",
+    "Security And Privacy Gate",
+    "Product Boundaries",
+    "Agent Discovery And Interoperability",
+    "Evaluation Gate",
+    "Work And Audit State",
+    "Model Context Protocol",
+    "Agent2Agent",
+    "prompt injection",
+    "44 by 44",
+    "R2",
+    "R3",
 ]
 
 REQUIRED_PR_TERMS = [
@@ -222,6 +244,7 @@ def verify_mermaid_framework() -> None:
         "docs/AI_AGENT_WORKFLOW.md": 4,
         "docs/MEMBER_ONBOARDING.md": 1,
         "docs/REPOSITORY_STANDARD.md": 1,
+        "docs/AI_CONCIERGE_STANDARD.md": 3,
         "GOVERNANCE.md": 1,
     }
     for path, minimum in required_diagrams.items():
@@ -305,6 +328,7 @@ def main() -> None:
     ensure_terms("docs/AI_AGENT_WORKFLOW.md", REQUIRED_WORKFLOW_TERMS)
     ensure_terms("GOVERNANCE.md", REQUIRED_GOVERNANCE_TERMS)
     ensure_terms("docs/REPOSITORY_STANDARD.md", REQUIRED_REPO_STANDARD_TERMS)
+    ensure_terms("docs/AI_CONCIERGE_STANDARD.md", REQUIRED_CONCIERGE_TERMS)
     ensure_terms("PULL_REQUEST_TEMPLATE.md", REQUIRED_PR_TERMS)
 
     verify_tracked_boundary()

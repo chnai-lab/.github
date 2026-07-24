@@ -9,6 +9,7 @@ Read these before contributing:
 - [`AGENTS.md`](AGENTS.md) - vendor-neutral agent contract.
 - [`docs/AI_AGENT_WORKFLOW.md`](docs/AI_AGENT_WORKFLOW.md) - complete delivery loop.
 - [`docs/REPOSITORY_STANDARD.md`](docs/REPOSITORY_STANDARD.md) - repository adoption contract.
+- [`docs/AI_CONCIERGE_STANDARD.md`](docs/AI_CONCIERGE_STANDARD.md) - public and private assistant boundary.
 - [`GOVERNANCE.md`](GOVERNANCE.md) - roles, access, and decision rights.
 - [`SECURITY.md`](SECURITY.md) - reporting and sensitive-data boundary.
 

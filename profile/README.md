@@ -55,6 +55,9 @@ data, source code, credentials, or strategy.
   — traceable issue-to-merge workflow for humans and agents.
 - [`docs/REPOSITORY_STANDARD.md`](https://github.com/chnai-lab/.github/blob/main/docs/REPOSITORY_STANDARD.md)
   — adoption contract for every active product repository.
+- [`docs/AI_CONCIERGE_STANDARD.md`](https://github.com/chnai-lab/.github/blob/main/docs/AI_CONCIERGE_STANDARD.md)
+  — public, product, and private agent boundaries for the connected digital
+  city.
 - [`GOVERNANCE.md`](https://github.com/chnai-lab/.github/blob/main/GOVERNANCE.md)
   — roles, access, decision rights, and the current enforcement boundary.
 - [`CONTRIBUTING.md`](https://github.com/chnai-lab/.github/blob/main/CONTRIBUTING.md)
