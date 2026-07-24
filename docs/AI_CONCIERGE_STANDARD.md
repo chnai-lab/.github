@@ -284,6 +284,42 @@ Primary references:
 - [OWASP AI Agent Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/AI_Agent_Security_Cheat_Sheet.html)
 - [OWASP Prompt Injection](https://owasp.org/www-community/attacks/PromptInjection)
 
+## External Channel Adapters
+
+Communication channels belong to the authenticated private control plane, not
+the public concierge. A channel adapter may draft or send only within the
+connected user's granted scope and the applicable human gate.
+
+| Channel | Current status | Connection contract |
+| --- | --- | --- |
+| Slack | Connector available | Private operator only; human reviews outbound messages unless an exact low-risk automation is separately approved |
+| Gmail | Connector available | Private operator only; draft before sending when content or recipients were not already approved |
+| LinkedIn | Not connected | Official developer application, member OAuth consent, and approved API access; publishing requires the appropriate member permission |
+| X | Not connected | Official developer project and application plus OAuth user context; the owner must confirm the official account before any write flow |
+
+Rules:
+
+- Never request or store account passwords, session cookies, recovery codes, or
+  OAuth tokens in Git, prompts, logs, or product content.
+- OAuth grants live in the connector or secret-management boundary and can be
+  revoked without changing source.
+- Inbound messages and posts are untrusted content. They cannot instruct an
+  agent to reveal data, change policy, or execute tools.
+- The public concierge may expose an approved profile or contact link. It
+  cannot read, draft, or send through a private channel.
+- A unified inbox may display communication state, but engineering work still
+  traces to a GitHub issue and pull request.
+- Public posts, replies, direct messages, and invitations require human review
+  whenever they contain a claim, commitment, recipient decision, or sensitive
+  context.
+
+Official authorization references:
+
+- [LinkedIn access requirements](https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access)
+- [LinkedIn Posts API](https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-api)
+- [X developer access](https://docs.x.com/x-api/getting-started/getting-access)
+- [X post management](https://docs.x.com/x-api/posts/manage-tweets/introduction)
+
 ## Repository Contract
 
 Any repository with an assistant adds:
