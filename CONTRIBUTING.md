@@ -155,7 +155,8 @@ inside the merged PR.
 ## Access And Accounts
 
 - Members receive product access through GitHub teams.
-- Organization base repository access remains `none`.
+- Organization-wide access stays least-privilege; owners verify the live base
+  permission privately.
 - Two-factor authentication is required before product access.
 - Each person uses their own account and credentials.
 - Commit identity must be deliberate: use GitHub's account-provided no-reply
@@ -167,17 +168,17 @@ inside the merged PR.
   production.
 - Outside collaborators are temporary and limited to one repository.
 
-CHNAI LAB currently uses GitHub Free. Private-repository branch protection is
-therefore a policy rather than an enforced control. The organization will not
-claim required approvals or checks are technically enforced until a GitHub Team
-upgrade and live settings prove it.
+Do not infer technical enforcement from this public policy. Required approvals,
+checks, and branch controls are described as enforced only after an owner
+verifies the live repository settings; otherwise the repository remains
+`Review-ready`.
 
 ## Reusable AI-Native Team Starter
 
-The public
-[`ai-native-team-starter`](https://github.com/kavatana/ai-native-team-starter)
-packages a product-neutral version of this workflow. It contains no private
-startup source, data, or strategy.
+The private `ai-native-team-starter` repository packages a product-neutral
+version of this workflow without private startup source, data, or strategy. It
+is prepared for owner review and a separate publication decision; it is not
+currently available for outside adoption.
 
 ## Final Traceability Check
 

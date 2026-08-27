@@ -56,33 +56,25 @@ flowchart LR
 
 Rules:
 
-- Organization base repository permission stays `none`.
-- Members receive access through product teams, not direct grants.
-- A teammate may join more than one product team after confirming active work,
-  but broad access is never the default.
-- Outside collaborators are temporary and limited to one repository.
+- Organization-wide access stays least-privilege; the live base-permission
+  value is verified privately by an owner.
+- Members receive access through product teams rather than broad direct grants.
+- Cross-product access requires a second explicit decision; it is never the
+  default.
+- Outside collaborators are temporary and scoped to the smallest useful area.
 - Access is reviewed when a project ends, a role changes, or a teammate becomes
   inactive.
 - Two-factor authentication is required before new product access is granted.
 
 ### Product Team Map
 
-GitHub remains the source of truth for current membership. This table defines
-the stable team-to-repository boundary only; it does not duplicate member
-assignments.
+GitHub is the source of truth for the live mapping. Exact team slugs, private
+repository names, membership, invitations, and permissions are owner-only
+administrative metadata and are not duplicated in this public repository.
 
-| Team slug | Private repository | Baseline permission |
-| --- | --- | --- |
-| `bayonhub-builders` | `bayonhub` | Write |
-| `chomkar-builders` | `chomkar` | Write |
-| `phsaros-builders` | `phsaros` | Write |
-| `sat-digital-builders` | `sat-digital` | Write |
-| `svaeng-yul-builders` | `svaeng-yul` | Write |
-| `vantrex-builders` | `vantrex` | Write |
-| `website-builders` | `website` | Write |
-
-Adding a member to a row grants access only to that row's repository. Any
-cross-product assignment is a second explicit team decision.
+The public contract is simple: each active product has a narrowly scoped team,
+access is granted only for current work, and any cross-product assignment is a
+separate explicit decision.
 
 ## Decision Routing
 
@@ -121,27 +113,18 @@ turning every idea into an active commitment.
 
 ## Current Enforcement Boundary
 
-CHNAI LAB currently uses GitHub Free. Team access, private repositories,
-CODEOWNERS, issues, pull requests, and Actions are available. GitHub does not
-enforce protected branches for private organization repositories on this plan.
+Account plan, billing, live security settings, repository visibility, team
+membership, invitations, and exact enforcement state are owner-only
+administrative metadata. They are reviewed directly in GitHub and are not
+exported into this public repository.
 
-Until an upgrade to GitHub Team:
-
-- The no-direct-push rule is a documented team policy, not a technical block.
-- CODEOWNERS requests review but cannot force approval on private repos.
-- CI reports failures but cannot prevent a privileged direct push.
-
-Organization owners can review the web audit log, but automated audit-log API
-access requires GitHub Enterprise Cloud. Current automated verification must
-therefore compare live team, repository, issue, pull request, and CI state; it
-must not claim an exported organization audit trail exists.
-
-After an upgrade, every active private product repository should require a pull
-request, one approval, resolved conversations, passing required checks, a current
-branch, and no force pushes or deletions on `main`.
-
-This limitation must remain visible. We do not describe a social policy as an
-enforced control.
+This document describes the desired control. A product repository may be called
+`Enforced` only after an owner verifies that its live GitHub settings require a
+pull request, the intended human review, resolved conversations, passing checks,
+a current branch, and protection against force pushes and deletion on `main`.
+If the live plan or repository does not support those controls, label it
+`Review-ready` and describe the gap privately; do not present a social policy as
+a technically enforced control.
 
 ## Privacy And Fairness
 

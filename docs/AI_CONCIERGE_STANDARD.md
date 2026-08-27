@@ -10,8 +10,8 @@ stricter: every answer must stay inside an approved evidence boundary, every
 action must stay inside an explicit authority boundary, and every important
 decision remains attributable to a human.
 
-This applies to the portfolio, all seven product tracks, Studio OS, and any
-future shared agent gateway.
+This applies to the portfolio, current product tracks, Studio OS, and any future
+shared agent gateway.
 
 ## Names And Boundaries
 
@@ -46,8 +46,8 @@ flowchart TB
         NoPrivate[Boundary: no private route]
     end
 
-    subgraph ProductDistricts[Seven product districts]
-        Specialists[PLANNED: seven product specialists]
+    subgraph ProductDistricts[Product districts]
+        Specialists[PLANNED: product specialists]
         ProductEvidence[Approved product knowledge]
     end
 
@@ -253,11 +253,11 @@ service, or evidence source is unavailable.
 | District | Assistant may explain | Assistant must not claim or do |
 | --- | --- | --- |
 | BayonHub | Approved opportunity workflow and public resources | Invent openings, employers, acceptance, salary, or applicant outcomes |
-| Svaeng Yul | Approved Khmer learning content and navigation | Invent lesson mastery, credentials, accuracy, or guaranteed career results |
+| Svaeng Yul | Approved QCM practice scope and navigation | Provide clinical guidance, imply diagnosis or treatment, invent mastery, or guarantee exam outcomes |
 | Chomkar | Availability documentation and buyer-review workflow | Guarantee demand, price, sale, offtake, safety, certification, or impact |
-| Sat Digital | Approved service scope and security hygiene | Guarantee prevention, monitoring coverage, incident response, or safety |
-| Vantrex | Approved educational product documentation | Give investment advice, promise performance, reveal private models, or execute trades by default |
-| PHSAROS | Approved SME workflow documentation | Expose business data, alter finance or inventory, or imply audited accuracy |
+| Sat Digital | Approved local-prototype scope and general security hygiene | Imply a live integration, guarantee prevention or monitoring coverage, perform autonomous action, or claim protection |
+| Vantrex | Approved pre-launch decision-support documentation | Imply a working application or validated model, give investment advice, promise performance, reveal private models, or execute trades |
+| PHSAROS | Approved point-of-sale and inventory workflow documentation | Imply active operator adoption or audited accuracy, expose business data, or alter finance or inventory |
 | CHNAI LAB | Public studio model, products, policies, and contribution path | Expose member data, private strategy, access, credentials, or unreleased work |
 
 The local product contract may add stricter rules.
@@ -394,5 +394,5 @@ state.
 6. Gated private actions only for a narrow allowlist.
 7. A2A handoff only after two real agents and an operational need exist.
 
-Do not launch all seven product agents at once. Prove one layer, preserve the
+Do not launch every product agent at once. Prove one layer, preserve the
 boundary, then reuse the verified pattern.

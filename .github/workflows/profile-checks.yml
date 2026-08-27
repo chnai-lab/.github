@@ -34,6 +34,9 @@ jobs:
         env:
           CHNAI_COMMIT_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
 
+      - name: Test public-boundary regressions
+        run: python3 -m unittest discover -s tests -v
+
       - name: Compile verifier
         run: python3 -m py_compile scripts/verify_profile.py
 

@@ -2,6 +2,7 @@ import os
 import re
 import subprocess
 from pathlib import Path
+from typing import Optional
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -26,12 +27,14 @@ REQUIRED_FILES = [
     ".github/ISSUE_TEMPLATE/feature.yml",
     ".github/ISSUE_TEMPLATE/task.yml",
     ".github/workflows/profile-checks.yml",
+    "tests/test_verify_profile.py",
 ]
 
 REQUIRED_PROFILE_TERMS = [
     "CHNAI LAB",
     "student-run product studio",
     "AI-native",
+    "Current Product Tracks",
     "BayonHub",
     "Svaeng Yul",
     "Chomkar",
@@ -42,6 +45,15 @@ REQUIRED_PROFILE_TERMS = [
     "AI-Native Team Starter",
     "GOVERNANCE.md",
     "REPOSITORY_STANDARD.md",
+    "unmerged review branch",
+    "medical and nursing students",
+    "Restricted private medical QCM preview",
+    "synthetic fixtures",
+    "does not establish a working application",
+    "fresh operator validation",
+    "private product-neutral repository template",
+    "not currently available for outside adoption",
+    "not a current roster or access inventory",
 ]
 
 REQUIRED_AGENT_TERMS = [
@@ -80,8 +92,8 @@ REQUIRED_GOVERNANCE_TERMS = [
     "Decision Routing",
     "Merge Authority",
     "Current Enforcement Boundary",
-    "GitHub Free",
-    "audit-log API",
+    "owner-only",
+    "administrative metadata",
     "2FA",
 ]
 
@@ -116,6 +128,10 @@ REQUIRED_CONCIERGE_TERMS = [
     "X",
     "prompt injection",
     "44 by 44",
+    "current product tracks",
+    "Approved QCM practice scope",
+    "Approved local-prototype scope",
+    "Approved pre-launch decision-support documentation",
     "R2",
     "R3",
 ]
@@ -163,6 +179,92 @@ SECRET_MARKERS = (
     "-----BEGIN " + "PRIVATE KEY-----",
 )
 
+PUBLIC_CLAIM_FILES = (
+    "profile/README.md",
+    "CONTRIBUTING.md",
+    "docs/AI_CONCIERGE_STANDARD.md",
+)
+
+STALE_PUBLIC_CLAIM_PATTERNS = (
+    (
+        re.compile(
+            r"\b(?:all\s+)?seven(?:[-\s]+product)?[-\s]+"
+            r"(?:tracks?|districts|specialists|agents)\b",
+            re.IGNORECASE,
+        ),
+        "fixed seven-product framing",
+    ),
+    (
+        re.compile(r"\bKhmer self-study video learning\b", re.IGNORECASE),
+        "obsolete Svaeng Yul tech-video framing",
+    ),
+    (
+        re.compile(
+            r"\|\s*\*\*Svaeng Yul\*\*\s*\|[^\n]*\bpilot\b",
+            re.IGNORECASE,
+        ),
+        "overstated Svaeng Yul pilot claim",
+    ),
+    (
+        re.compile(
+            r"\b(?:teams?\s+outside\s+CHNAI LAB|outsiders?)\s+can\s+adopt\b",
+            re.IGNORECASE,
+        ),
+        "unavailable AI-native team starter adoption claim",
+    ),
+    (
+        re.compile(r"\bPrivate core under hardening\b", re.IGNORECASE),
+        "unverified Sat Digital core claim",
+    ),
+    (
+        re.compile(r"\bTrading software for signals\b", re.IGNORECASE),
+        "overbroad Vantrex software claim",
+    ),
+    (
+        re.compile(r"\bSME operating system for\b", re.IGNORECASE),
+        "overbroad PHSAROS operating-system claim",
+    ),
+)
+
+PUBLIC_GITHUB_METADATA_PATTERNS = (
+    (
+        re.compile(
+            r"\b(?:currently\s+has|team\s+of|community\s+of)\s+"
+            r"(?:\d+|one|two|three|four|five|six|seven|eight|nine|ten)\s+"
+            r"(?:active\s+)?members?\b",
+            re.IGNORECASE,
+        ),
+        "exact organization member count",
+    ),
+    (
+        re.compile(r"\b[a-z0-9-]+-builders\b", re.IGNORECASE),
+        "exact private GitHub team slug",
+    ),
+    (
+        re.compile(
+            r"\|\s*Team slug\s*\|\s*Private repository\s*\|",
+            re.IGNORECASE,
+        ),
+        "private team-to-repository inventory",
+    ),
+    (
+        re.compile(
+            r"\bcurrently uses GitHub\s+(?:Free|Team|Enterprise(?: Cloud)?)\b",
+            re.IGNORECASE,
+        ),
+        "live organization plan",
+    ),
+    (
+        re.compile(
+            r"\b(?:all|every)\s+(?:active\s+)?members?\s+"
+            r"(?:has|have|uses?|enabled)\s+(?:GitHub\s+)?"
+            r"(?:2FA|two-factor authentication)\b",
+            re.IGNORECASE,
+        ),
+        "live member security state",
+    ),
+)
+
 
 def read(path: str) -> str:
     file_path = ROOT / path
@@ -191,6 +293,20 @@ def ensure_terms(path: str, terms: list[str]) -> None:
         raise SystemExit(f"{path} is missing required terms: {', '.join(missing)}")
 
 
+def public_github_metadata_issue(text: str) -> Optional[str]:
+    for pattern, label in PUBLIC_GITHUB_METADATA_PATTERNS:
+        if pattern.search(text):
+            return label
+    return None
+
+
+def stale_profile_truth_issue(text: str) -> Optional[str]:
+    for pattern, label in STALE_PUBLIC_CLAIM_PATTERNS:
+        if pattern.search(text):
+            return label
+    return None
+
+
 def verify_no_placeholders_or_sensitive_content() -> None:
     for path in tracked_files():
         file_path = ROOT / path
@@ -209,6 +325,22 @@ def verify_no_placeholders_or_sensitive_content() -> None:
         for marker in SECRET_MARKERS:
             if marker in text:
                 raise SystemExit(f"Potential secret marker {marker!r} in {path}")
+
+        if not path.startswith("tests/"):
+            metadata_issue = public_github_metadata_issue(text)
+            if metadata_issue:
+                raise SystemExit(
+                    f"Public repository contains {metadata_issue}; keep live GitHub "
+                    f"administration owner-only: {path}"
+                )
+
+    for path in PUBLIC_CLAIM_FILES:
+        claim_issue = stale_profile_truth_issue(read(path))
+        if claim_issue:
+            raise SystemExit(
+                f"Public claim surface contains stale or overbroad framing: "
+                f"{claim_issue}: {path}"
+            )
 
 
 def verify_tracked_boundary() -> None:
@@ -297,6 +429,8 @@ def verify_ci_policy() -> None:
         raise SystemExit("CI jobs must declare a timeout")
     if "python3 scripts/verify_profile.py" not in workflow:
         raise SystemExit("CI must run the repository verifier")
+    if "python3 -m unittest discover -s tests -v" not in workflow:
+        raise SystemExit("CI must run public-boundary regression tests")
     if "CHNAI_COMMIT_SHA: ${{ github.event.pull_request.head.sha || github.sha }}" not in workflow:
         raise SystemExit("CI must verify the contributed commit rather than a merge ref")
     if "fetch-depth: 0" not in workflow:

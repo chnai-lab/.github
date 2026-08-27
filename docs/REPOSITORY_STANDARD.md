@@ -58,7 +58,8 @@ the product-specific boundary.
 
 - `main` is the default branch.
 - Repository visibility matches the public/private product boundary.
-- Organization base access remains `none`.
+- Organization-wide access stays least-privilege; the live base permission is
+  verified privately.
 - A product team has write access; direct collaborator grants are exceptional.
 - `CODEOWNERS` names the product team and retains an organization-owner fallback.
 - CI declares least-privilege permissions, job timeouts, pinned Action commit
@@ -77,8 +78,9 @@ the product-specific boundary.
 | Review-ready | Issue/PR templates, CODEOWNERS, CI, verifier, dependency monitoring | Work is traceable and reviewable |
 | Enforced | Protected `main`, required checks, approval, conversation resolution | GitHub technically blocks policy bypass |
 
-On GitHub Free, private product repos can reach Review-ready but not Enforced.
-Do not mark them Enforced until the plan and live settings prove it.
+Account plan and live settings are owner-only administrative metadata. Do not
+mark a repository `Enforced` until an owner verifies that the required controls
+are technically active; otherwise keep it `Review-ready`.
 
 ## Risk-Sensitive Additions
 
