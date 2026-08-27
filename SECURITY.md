@@ -10,10 +10,11 @@ Do not publish exploit details, credentials, tokens, private user data, or
 production infrastructure information in public issues, pull requests, comments,
 screenshots, or prompts.
 
-For public repositories, use GitHub's private vulnerability reporting or contact
-a CHNAI LAB owner directly. For private repositories, report the issue in the
-team's private channel and link the affected repository, commit, route, screen,
-or workflow.
+For public repositories, use GitHub's private vulnerability reporting when the
+repository exposes that option. Otherwise contact a CHNAI LAB owner through a
+verified private channel. Never open a public issue containing exploit details.
+For private repositories, report the issue in the team's private channel and
+link the affected repository, commit, route, screen, or workflow.
 
 ## What To Include
 
@@ -32,8 +33,24 @@ or workflow.
 5. Merge through pull request review.
 6. Rotate any exposed secret and document follow-up work.
 
+Access, secret rotation, production changes, repository visibility, and other
+privileged incident actions are R3. An agent may prepare the procedure but must
+stop before the action until the organization owner explicitly authorizes it.
+
+## Account Baseline
+
+- Every person uses an individual GitHub and email account.
+- Two-factor authentication is required before private product access.
+- Recovery codes stay private and outside repositories, issues, prompts, and
+  chat.
+- Shared default passwords are prohibited.
+- Product access is granted through the smallest relevant GitHub team and is
+  removed when no longer needed.
+
 ## Agent Safety
 
 AI agents may help investigate and patch security issues, but they must not be
 given raw secrets, private customer data, or production credentials. Share
-redacted logs and minimal reproduction context instead.
+redacted logs, synthetic fixtures, and minimal reproduction context instead.
+Agents do not approve their own security work or claim a human performed a
+manual check.

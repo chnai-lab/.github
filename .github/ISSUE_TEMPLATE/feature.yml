@@ -1,0 +1,96 @@
+name: Feature or improvement
+description: Propose a narrow product outcome backed by a real user need
+title: "feat: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Start with the problem and evidence. The builder and their agent choose implementation after reading the repository.
+
+  - type: input
+    id: human_owner
+    attributes:
+      label: Accountable human
+      description: GitHub handle of the person who owns product judgment and verification.
+      placeholder: "@username"
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem and user
+      description: Who experiences the problem, what happens today, and why does it matter?
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence available
+      description: User conversation, observation, support request, metric, prototype result, or explicit assumption.
+    validations:
+      required: true
+
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Intended outcome
+      description: Describe the behavior or decision that should become possible, not a list of files.
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      description: What is included in this issue?
+    validations:
+      required: true
+
+  - type: textarea
+    id: non_goals
+    attributes:
+      label: Non-goals
+      description: What tempting adjacent work is explicitly excluded?
+    validations:
+      required: true
+
+  - type: textarea
+    id: done
+    attributes:
+      label: Definition of done
+      description: List observable, testable acceptance conditions.
+    validations:
+      required: true
+
+  - type: textarea
+    id: verification
+    attributes:
+      label: Verification plan
+      description: Commands, manual flow, screenshots, or evidence a human will personally verify.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: risk
+    attributes:
+      label: Risk tier
+      description: Use the highest matching tier from docs/AI_AGENT_WORKFLOW.md.
+      options:
+        - R0 - Documentation or non-runtime change
+        - R1 - Normal product behavior
+        - R2 - Auth, data, security, payments, trading, migrations, or public claims
+        - R3 - Production access, secrets, visibility, legal commitments, or irreversible action
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: boundary
+    attributes:
+      label: Product and data boundary
+      options:
+        - label: This issue contains no secrets, credentials, private user data, or private strategy.
+          required: true
+        - label: Claims and expected impact are stated as assumptions unless already verified.
+          required: true

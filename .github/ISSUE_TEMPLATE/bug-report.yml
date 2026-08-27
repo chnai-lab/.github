@@ -1,0 +1,89 @@
+name: Bug report
+description: Report behavior that is incorrect, unsafe, or inconsistent
+title: "fix: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Describe observable behavior. Remove secrets, private user data, and production details before submitting.
+
+  - type: input
+    id: human_owner
+    attributes:
+      label: Accountable human
+      description: GitHub handle of the person who will verify the fix.
+      placeholder: "@username"
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: What happened? Include the exact visible error when it is safe to share.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What should have happened instead?
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      placeholder: |
+        1. Start from ...
+        2. Perform ...
+        3. Observe ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Redacted evidence
+      description: Safe logs, screenshots, affected route, commit, screen, or function.
+
+  - type: dropdown
+    id: risk
+    attributes:
+      label: Risk tier
+      description: Use the highest matching tier from docs/AI_AGENT_WORKFLOW.md.
+      options:
+        - R0 - Documentation or non-runtime change
+        - R1 - Normal product behavior
+        - R2 - Auth, data, security, payments, trading, migrations, or public claims
+        - R3 - Production access, secrets, visibility, legal commitments, or irreversible action
+    validations:
+      required: true
+
+  - type: textarea
+    id: done
+    attributes:
+      label: Definition of done
+      description: Observable conditions that prove the bug is fixed and did not regress nearby behavior.
+    validations:
+      required: true
+
+  - type: textarea
+    id: verification
+    attributes:
+      label: Verification plan
+      description: Commands, manual flow, screenshots, or other evidence a human will personally verify.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: boundary
+    attributes:
+      label: Safety boundary
+      options:
+        - label: I removed secrets, credentials, private user data, and production infrastructure details.
+          required: true
+        - label: I did not include unsupported customer, revenue, safety, compliance, or impact claims.
+          required: true
