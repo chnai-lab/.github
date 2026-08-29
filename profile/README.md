@@ -21,7 +21,7 @@ traction, legal ownership, production readiness, or a public release.
 
 | Track | Direction | Evidence boundary |
 | --- | --- | --- |
-| [**BayonHub**](https://bayonhub.com) | Opportunity coordination for Cambodian tech students. | Expanded MVP work exists on an unmerged review branch. End-to-end admin, employer, and student review, a merge decision, and deployment remain open. |
+| [**BayonHub**](https://bayonhub.com) | Opportunity coordination for Cambodian tech students. | The retired classifieds product has been removed from the codebase and a Khmer-first public surface for the current direction is deployed. Student, employer, and admin flows are not demonstrated behind it; a landing page is not a working platform. |
 | [**Svaeng Yul**](https://svaengyul.com) | Mobile-first QCM practice for Cambodian medical and nursing students. | Restricted private medical QCM preview. Instructor review plus mobile and authentication validation remain open; it is not clinical guidance or a substitute for formal assessment. |
 | [**Chomkar**](https://chomkar.com) | B2B agriculture coordination where buyer requests can be documented and reviewed with farmers and cooperatives before harvest. | Live pre-pilot; no real order, validated demand, guaranteed price, sale, or impact claim. |
 | **Sat Digital** | Defensive tooling concepts for Telegram communities, groups, and websites. | Working local prototype tested with synthetic fixtures only; no verified live integration, monitoring coverage, autonomous action, or protection guarantee. |
