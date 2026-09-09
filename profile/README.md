@@ -1,15 +1,13 @@
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/chnai-lab/.github/main/profile/assets/banner-dark.webp">
-  <img alt="CHNAI LAB — building intelligence, creating empires. A Cambodian student-run product studio in Phnom Penh." src="https://raw.githubusercontent.com/chnai-lab/.github/main/profile/assets/banner-light.webp">
-</picture>
+<img src="https://raw.githubusercontent.com/chnai-lab/.github/main/profile/assets/banner.svg" alt="CHNAI LAB — building intelligence, creating empires. A Cambodian student-run product studio in Phnom Penh." width="100%">
 
 # CHNAI LAB
 
 [![Profile Checks](https://github.com/chnai-lab/.github/actions/workflows/profile-checks.yml/badge.svg?branch=main)](https://github.com/chnai-lab/.github/actions/workflows/profile-checks.yml)
 
-CHNAI LAB is a Cambodian student-run product studio. We turn focused product
-work into reviewable engineering experience: a person owns the decision, AI
-agents accelerate bounded work, and evidence determines what we can claim.
+We turn focused product work into reviewable engineering experience. A person
+owns the decision, AI agents accelerate bounded work, and evidence determines
+what we can claim. The studio is a Cambodian student-run product studio, and
+most product source stays private.
 
 We are intentionally AI-native: agents help us research, build, test, document,
 and review, while humans stay accountable for product judgment, security,
