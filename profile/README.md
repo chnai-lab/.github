@@ -1,3 +1,8 @@
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/chnai-lab/.github/main/profile/assets/banner-dark.webp">
+  <img alt="CHNAI LAB — we build and own what we make. A Cambodian student-run product studio in Phnom Penh." src="https://raw.githubusercontent.com/chnai-lab/.github/main/profile/assets/banner-light.webp">
+</picture>
+
 # CHNAI LAB
 
 [![Profile Checks](https://github.com/chnai-lab/.github/actions/workflows/profile-checks.yml/badge.svg?branch=main)](https://github.com/chnai-lab/.github/actions/workflows/profile-checks.yml)
@@ -24,9 +29,19 @@ traction, legal ownership, production readiness, or a public release.
 | [**BayonHub**](https://bayonhub.com) | Opportunity coordination for Cambodian tech students. | Expanded MVP work exists on an unmerged review branch. End-to-end admin, employer, and student review, a merge decision, and deployment remain open. |
 | [**Svaeng Yul**](https://svaengyul.com) | Mobile-first QCM practice for Cambodian medical and nursing students. | Restricted private medical QCM preview. Instructor review plus mobile and authentication validation remain open; it is not clinical guidance or a substitute for formal assessment. |
 | [**Chomkar**](https://chomkar.com) | B2B agriculture coordination where buyer requests can be documented and reviewed with farmers and cooperatives before harvest. | Live pre-pilot; no real order, validated demand, guaranteed price, sale, or impact claim. |
-| **Sat Digital** | Defensive tooling concepts for Telegram communities, groups, and websites. | Working local prototype tested with synthetic fixtures only; no verified live integration, monitoring coverage, autonomous action, or protection guarantee. |
-| [**Vantrex**](https://vantrex-ten.vercel.app) | Trading decision-support concepts for signals and indicator workflows. | Pre-launch. A public marketing surface does not establish a working application, validated model performance, or live-money capability. |
+| **Sat Digital** | Defensive moderation for Telegram communities, groups, and websites. | The rules run as a deployed webhook and act only where a human has made the bot a group admin. No pilot, users, revenue, monitoring coverage, autonomous action, or protection guarantee. |
+| [**Vantrex**](https://vantrex-ten.vercel.app) | Trading decision-support for signals and indicator workflows. | Pre-launch: no customers, payments in test mode, no published track record. Sign-in answers again on a recreated database. Neither a deployment nor a portal establishes validated model performance or live-money capability. |
 | [**PHSAROS**](https://phsaros.vercel.app) | Point-of-sale, inventory, customer, and expense workflows for local SMEs. | A public product surface exists; fresh operator validation and written attribution remain open. No audited accounting, tax, payroll, or compliance claim. |
+| [**LMS for Education**](https://lms-for-education-six.vercel.app) | Course delivery, assessment, and academic operations for schools and training centres. | A public demo on synthetic data carries the enrol-to-grade loop. No institution runs on it; production providers, launch security, and approval for live student data remain open. |
+
+## Client Work
+
+The studio also builds for clients, and the brand, product line, and
+photography in that work belong to the client, not to us.
+
+| Client build | What it is | Boundary |
+| --- | --- | --- |
+| [**LEAP Everlasting Blooms**](https://leapelb.store) | A storefront for a Phnom Penh handmade-gift maker who had been selling through chat messages: catalogue, accounts, checkout, KHQR payment, and order tracking. | Delivered and live. No order volume, revenue, or customer count is claimed here. |
 
 ## How We Operate
 
