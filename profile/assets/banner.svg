@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 400" width="1280" height="400" role="img" aria-label="CHNAI LAB — building intelligence, creating empires. A Cambodian student-run product studio in Phnom Penh">
+  <title>CHNAI LAB</title>
+  <desc>An animated identity banner: a hexagonal lattice turning slowly in depth beside the studio mark, wordmark and tagline.</desc>
+
+  <defs>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#101A1B"/><stop offset="1" stop-color="#080E0F"/>
+    </linearGradient>
+    <radialGradient id="teal" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#17B08E" stop-opacity=".24"/>
+      <stop offset="55%" stop-color="#17B08E" stop-opacity=".05"/>
+      <stop offset="100%" stop-color="#17B08E" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="sweep" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#fff" stop-opacity=".045"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="fadeFloor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#fff" stop-opacity=".8"/>
+    </linearGradient>
+    <mask id="floorMask"><rect width="1280" height="400" fill="url(#fadeFloor)"/></mask>
+    <clipPath id="frame"><rect width="1280" height="400" rx="16"/></clipPath>
+    <polygon id="hex" points="0,-52 45,-26 45,26 0,52 -45,26 -45,-26"/>
+
+    <style>
+      .drift { animation: drift 16s linear infinite }
+      @keyframes drift { to { transform: translateY(44px) } }
+      .spin  { animation: spin 44s linear infinite; transform-origin: 1010px 200px }
+      @keyframes spin { to { transform: rotate(360deg) } }
+      .spinb { animation: spin 66s linear infinite reverse; transform-origin: 1010px 200px }
+      .breathe { animation: breathe 9s ease-in-out infinite }
+      @keyframes breathe { 0%,100% { opacity:.8 } 50% { opacity:1 } }
+      .float { animation: float 8s ease-in-out infinite }
+      @keyframes float { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-5px) } }
+      .shine { animation: shine 13s ease-in-out infinite }
+      @keyframes shine { 0% { transform: translateX(-1400px) } 55%,100% { transform: translateX(1400px) } }
+      .pulseA { animation: pulse 5.5s ease-in-out infinite }
+      .pulseB { animation: pulse 5.5s ease-in-out infinite; animation-delay: -1.9s }
+      .pulseC { animation: pulse 5.5s ease-in-out infinite; animation-delay: -3.7s }
+      @keyframes pulse { 0%,100% { opacity:.18 } 50% { opacity:.62 } }
+      @media (prefers-reduced-motion: reduce) {
+        .drift,.spin,.spinb,.breathe,.float,.shine,.pulseA,.pulseB,.pulseC { animation: none }
+      }
+    </style>
+  </defs>
+
+  <g clip-path="url(#frame)">
+    <rect width="1280" height="400" fill="url(#ground)"/>
+
+    <g mask="url(#floorMask)" opacity=".45">
+      <g class="drift" stroke="#EDF1F1" stroke-opacity=".06" stroke-width="1" fill="none">
+        <path d="M-200 200H1480M-200 244H1480M-200 288H1480M-200 332H1480M-200 376H1480M-200 420H1480"/>
+      </g>
+      <g stroke="#EDF1F1" stroke-opacity=".045" stroke-width="1" fill="none">
+        <path d="M640 190L-320 420M640 190L160 420M640 190L440 420M640 190L640 420M640 190L840 420M640 190L1120 420M640 190L1600 420"/>
+      </g>
+    </g>
+
+    <circle cx="1010" cy="200" r="300" fill="url(#teal)" class="breathe"/>
+
+    <g class="spin" fill="none" stroke="#17B08E" stroke-width="1.6">
+      <use href="#hex" class="pulseA" transform="translate(1010 200) scale(1.9)"/>
+      <use href="#hex" class="pulseB" transform="translate(1010 200) scale(1.28)"/>
+    </g>
+    <g class="spinb" fill="none" stroke="#EDF1F1" stroke-opacity=".9" stroke-width="1.1">
+      <use href="#hex" class="pulseC" transform="translate(1010 200) scale(2.5)"/>
+      <use href="#hex" class="pulseA" transform="translate(1010 200) scale(3.1)"/>
+    </g>
+    <circle cx="1010" cy="200" r="9" fill="#17B08E" class="breathe"/>
+    <circle cx="1010" cy="200" r="20" fill="none" stroke="#17B08E" stroke-opacity=".3" stroke-width="1">
+      <animate attributeName="r" values="14;58;14" dur="7s" repeatCount="indefinite"/>
+      <animate attributeName="stroke-opacity" values=".34;0;.34" dur="7s" repeatCount="indefinite"/>
+    </circle>
+
+    <g class="float">
+      <rect x="60" y="52" width="80" height="80" rx="19" fill="#F6F5F2"/>
+      <image x="76" y="66" width="48" height="52" href="data:image/webp;base64,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"/>
+      <text x="164" y="112" font-family="ui-sans-serif, -apple-system, 'SF Pro Display', Inter, Segoe UI, Helvetica, Arial, sans-serif"
+            font-size="36" font-weight="800" letter-spacing="6" fill="#EDF1F1">CHNAI LAB</text>
+    </g>
+
+    <g transform="translate(60 172)">
+      <path d="M0 -4H32" stroke="#17B08E" stroke-width="2"/>
+      <text x="46" y="0" font-family="ui-monospace, 'JetBrains Mono', Menlo, monospace" font-size="12.5"
+            font-weight="700" letter-spacing="3.6" fill="#3FBFA8">BUILDING INTELLIGENCE. CREATING EMPIRES.</text>
+    </g>
+
+    <g font-family="ui-sans-serif, -apple-system, 'SF Pro Text', Inter, Segoe UI, Helvetica, Arial, sans-serif"
+       font-size="17" fill="#93A3A5">
+      <text x="60" y="228">A Cambodian student-run product studio. A person owns the</text>
+      <text x="60" y="254">decision, agents do bounded work, and evidence decides what</text>
+      <text x="60" y="280">we may claim.</text>
+    </g>
+
+    <text x="60" y="356" font-family="ui-monospace, 'JetBrains Mono', Menlo, monospace" font-size="11.5"
+          letter-spacing="2.4" fill="#64757A">PHNOM PENH · CAMBODIA</text>
+
+    <rect class="shine" width="420" height="400" fill="url(#sweep)"/>
+  </g>
+</svg>
