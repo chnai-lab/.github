@@ -1,6 +1,6 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/chnai-lab/.github/main/profile/assets/banner-dark.webp">
-  <img alt="CHNAI LAB — we build and own what we make. A Cambodian student-run product studio in Phnom Penh." src="https://raw.githubusercontent.com/chnai-lab/.github/main/profile/assets/banner-light.webp">
+  <img alt="CHNAI LAB — building intelligence, creating empires. A Cambodian student-run product studio in Phnom Penh." src="https://raw.githubusercontent.com/chnai-lab/.github/main/profile/assets/banner-light.webp">
 </picture>
 
 # CHNAI LAB
@@ -19,7 +19,49 @@ Most product source remains private. This profile exposes only approved
 direction, operating standards, and public proof—not customer data, private
 source, credentials, access state, or strategy.
 
-## Current Product Tracks
+## What we build
+
+<table>
+<tr>
+<td width="25%" align="center" valign="top">
+<a href="https://chomkar.com"><img src="https://raw.githubusercontent.com/chnai-lab/.github/main/profile/assets/tracks/chomkar.webp" width="100%" alt="Chomkar"></a>
+<br /><b>Chomkar</b><br /><sub>Live pre-pilot</sub>
+</td>
+<td width="25%" align="center" valign="top">
+<a href="https://phsaros.vercel.app"><img src="https://raw.githubusercontent.com/chnai-lab/.github/main/profile/assets/tracks/phsaros.webp" width="100%" alt="PHSAROS"></a>
+<br /><b>PHSAROS</b><br /><sub>Live core</sub>
+</td>
+<td width="25%" align="center" valign="top">
+<a href="https://www.kavatana.me/projects/bayonhub"><img src="https://raw.githubusercontent.com/chnai-lab/.github/main/profile/assets/tracks/bayonhub.webp" width="100%" alt="BayonHub"></a>
+<br /><b>BayonHub</b><br /><sub>Branch under review</sub>
+</td>
+<td width="25%" align="center" valign="top">
+<a href="https://svaengyul.com"><img src="https://raw.githubusercontent.com/chnai-lab/.github/main/profile/assets/tracks/svaeng-yul.webp" width="100%" alt="Svaeng Yul"></a>
+<br /><b>Svaeng Yul</b><br /><sub>Private preview</sub>
+</td>
+</tr>
+<tr>
+<td width="25%" align="center" valign="top">
+<a href="https://t.me/sat_digitalbot"><img src="https://raw.githubusercontent.com/chnai-lab/.github/main/profile/assets/tracks/sat-digital.webp" width="100%" alt="Sat Digital"></a>
+<br /><b>Sat Digital</b><br /><sub>Guard deployed</sub>
+</td>
+<td width="25%" align="center" valign="top">
+<a href="https://vantrex-ten.vercel.app"><img src="https://raw.githubusercontent.com/chnai-lab/.github/main/profile/assets/tracks/vantrex.webp" width="100%" alt="Vantrex"></a>
+<br /><b>Vantrex</b><br /><sub>Pre-launch</sub>
+</td>
+<td width="25%" align="center" valign="top">
+<a href="https://lms-for-education-six.vercel.app"><img src="https://raw.githubusercontent.com/chnai-lab/.github/main/profile/assets/tracks/lms.webp" width="100%" alt="LMS for Education"></a>
+<br /><b>LMS for Education</b><br /><sub>Public demo</sub>
+</td>
+<td width="25%" align="center" valign="top">
+<a href="https://leapelb.store"><img src="https://raw.githubusercontent.com/chnai-lab/.github/main/profile/assets/tracks/leap.webp" width="100%" alt="LEAP Everlasting Blooms"></a>
+<br /><b>LEAP Everlasting Blooms</b><br /><sub>Client build, live</sub>
+</td>
+</tr>
+</table>
+
+<details>
+<summary><b>Current Product Tracks</b> — the evidence boundary for every card above</summary>
 
 These labels describe the evidence boundary as it exists now. They do not imply
 traction, legal ownership, production readiness, or a public release.
@@ -34,7 +76,10 @@ traction, legal ownership, production readiness, or a public release.
 | [**PHSAROS**](https://phsaros.vercel.app) | Point-of-sale, inventory, customer, and expense workflows for local SMEs. | A public product surface exists; fresh operator validation and written attribution remain open. No audited accounting, tax, payroll, or compliance claim. |
 | [**LMS for Education**](https://lms-for-education-six.vercel.app) | Course delivery, assessment, and academic operations for schools and training centres. | A public demo on synthetic data carries the enrol-to-grade loop. No institution runs on it; production providers, launch security, and approval for live student data remain open. |
 
-## Client Work
+</details>
+
+<details>
+<summary><b>Client work</b> — what belongs to the client</summary>
 
 The studio also builds for clients, and the brand, product line, and
 photography in that work belong to the client, not to us.
@@ -42,6 +87,8 @@ photography in that work belong to the client, not to us.
 | Client build | What it is | Boundary |
 | --- | --- | --- |
 | [**LEAP Everlasting Blooms**](https://leapelb.store) | A storefront for a Phnom Penh handmade-gift maker who had been selling through chat messages: catalogue, accounts, checkout, KHQR payment, and order tracking. | Delivered and live. No order volume, revenue, or customer count is claimed here. |
+
+</details>
 
 ## How We Operate
 
