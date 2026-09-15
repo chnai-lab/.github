@@ -31,7 +31,7 @@ source, credentials, access state, or strategy.
 </td>
 <td width="25%" align="center" valign="top">
 <a href="https://www.kavatana.me/projects/bayonhub"><img src="https://raw.githubusercontent.com/chnai-lab/.github/main/profile/assets/tracks/bayonhub.webp" width="100%" alt="BayonHub"></a>
-<br /><b>BayonHub</b><br /><sub>Branch under review</sub>
+<br /><b>BayonHub</b><br /><sub>Live on sample data</sub>
 </td>
 <td width="25%" align="center" valign="top">
 <a href="https://svaengyul.com"><img src="https://raw.githubusercontent.com/chnai-lab/.github/main/profile/assets/tracks/svaeng-yul.webp" width="100%" alt="Svaeng Yul"></a>
@@ -66,7 +66,7 @@ traction, legal ownership, production readiness, or a public release.
 
 | Track | Direction | Evidence boundary |
 | --- | --- | --- |
-| [**BayonHub**](https://bayonhub.com) | Opportunity coordination for Cambodian tech students. | Expanded MVP work exists on an unmerged review branch. End-to-end admin, employer, and student review, a merge decision, and deployment remain open. |
+| [**BayonHub**](https://bayonhub.com) | Opportunity coordination for Cambodian tech students. | Live at bayonhub.com on fictional sample data, labelled Sample and restored daily: students register, save and apply; employers post and move applications. No real employers, openings, placements, or users yet. Email delivery, admin two-factor sign-in, password reset, and avatar uploads are not in place. |
 | [**Svaeng Yul**](https://svaengyul.com) | Mobile-first QCM practice for Cambodian medical and nursing students. | Restricted private medical QCM preview. Instructor review plus mobile and authentication validation remain open; it is not clinical guidance or a substitute for formal assessment. |
 | [**Chomkar**](https://chomkar.com) | B2B agriculture coordination where buyer requests can be documented and reviewed with farmers and cooperatives before harvest. | Live pre-pilot; no real order, validated demand, guaranteed price, sale, or impact claim. |
 | **Sat Digital** | Defensive moderation for Telegram communities, groups, and websites. | The rules run as a deployed webhook and act only where a human has made the bot a group admin. No pilot, users, revenue, monitoring coverage, autonomous action, or protection guarantee. |
