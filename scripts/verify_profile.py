@@ -45,7 +45,7 @@ REQUIRED_PROFILE_TERMS = [
     "AI-Native Team Starter",
     "GOVERNANCE.md",
     "REPOSITORY_STANDARD.md",
-    "unmerged review branch",
+    "No real employers, openings, placements, or users",
     "medical and nursing students",
     "Restricted private medical QCM preview",
     "No pilot, users, revenue, monitoring coverage",
@@ -213,6 +213,13 @@ STALE_PUBLIC_CLAIM_PATTERNS = (
             re.IGNORECASE,
         ),
         "unavailable AI-native team starter adoption claim",
+    ),
+    (
+        re.compile(
+            r"\b(?:branch under review|unmerged(?:\s+\w+)?\s+branch|review branch)\b",
+            re.IGNORECASE,
+        ),
+        "stale branch-as-evidence framing",
     ),
     (
         re.compile(r"\bPrivate core under hardening\b", re.IGNORECASE),
