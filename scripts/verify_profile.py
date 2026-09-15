@@ -45,7 +45,7 @@ REQUIRED_PROFILE_TERMS = [
     "AI-Native Team Starter",
     "GOVERNANCE.md",
     "REPOSITORY_STANDARD.md",
-    "unmerged review branch",
+    "a landing page is not a working platform",
     "medical and nursing students",
     "Restricted private medical QCM preview",
     "No pilot, users, revenue, monitoring coverage",
