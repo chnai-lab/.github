@@ -60,6 +60,18 @@ class PublicGitHubBoundaryTests(unittest.TestCase):
             "overstated Svaeng Yul pilot claim",
         )
 
+    def test_stale_branch_as_evidence_framing_is_rejected(self) -> None:
+        for text in (
+            "| [**BayonHub**](https://bayonhub.com) | Opportunity coordination. | "
+            "Expanded MVP work exists on an unmerged review branch. |",
+            "<br /><b>BayonHub</b><br /><sub>Branch under review</sub>",
+        ):
+            with self.subTest(text=text):
+                self.assertEqual(
+                    stale_profile_truth_issue(text),
+                    "stale branch-as-evidence framing",
+                )
+
     def test_unavailable_starter_adoption_claim_is_rejected(self) -> None:
         self.assertEqual(
             stale_profile_truth_issue(
