@@ -88,6 +88,12 @@ photography in that work belong to the client, not to us.
 
 </details>
 
+## Event Preparation
+
+CHNAI LAB is preparing for [NASA Space Apps 2026](https://www.spaceappschallenge.org/2026/)
+through open-data research, tool practice, and team planning. Competition
+development is scheduled for the official hackathon.
+
 ## How We Operate
 
 | Principle | Practice |
